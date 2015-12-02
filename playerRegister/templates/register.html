@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Register</title>
+    </head>
+
+    <body>
+        <h1>Let's register!</h1>
+
+        {% if isRegistered %}
+        Brainr says: <strong>Thank you for registering!</strong>
+        <a href="/register/">Return to the homepage.</a><br />
+        {% else %}
+        Brainr says: <strong>Register here!</strong><br />
+
+        <form id="playerMF" method="POST" action="/register/" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!-- Display each form. The as_p method wraps each element in a paragraph
+                 (<p>) element. This ensures each element appears on a new line,
+                 making everything look neater. -->
+            {{ playerMainForm.as_p }}
+            {{ playerAdditionalForm.as_p }}
+
+            <!-- Provide a button to click to submit the form. -->
+            <input type="submit" name="submit" value="Register" />
+        </form>
+        {% endif %}
+    </body>
+</html>

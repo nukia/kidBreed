@@ -1,0 +1,13 @@
+<html>
+<head>
+	<title>User Info</title>
+</head>
+<body>
+	<p>Nickname = {{ userObject.username }}</p>
+	<p>Real name = {{ userObject.first_name }}</p>
+	<p>Last Name = {{ userObject.last_name }}</p>
+	Media_url:	{{ MEDIA_URL }}
+	<p>Img = {{ MEDIA_URL }}{{ playerProfileObject.playerProfileImage }}</p>
+	<p><img src="{{ MEDIA_URL }}{{ playerProfileObject.playerProfileImage }}" width="{{ 75 }}" height="{{ 75 }}"></p> 
+</body>
+</html>

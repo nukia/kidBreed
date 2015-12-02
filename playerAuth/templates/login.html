@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOGIN</title>
+</head>
+<body>
+	<form action = "/login/" method = "POST">
+			{% csrf_token %}
+			<label for="username">Логин</label>
+			<input type = "text" name = "username" id = "username">
+			<label for="password"> Пароль</label>
+			<input type = "password" name = "password" id = "password">
+			{% if login_error %}
+				<label class="error">{{ login_error }}</label>
+				<label class="error">{{ err_username }}</label>
+				<label class="error">{{ err_pass }}</label>
+				<label class="error">{{ err_user }}</label>
+			{% endif %}
+			<input class = "button" type = "submit" value = "Войти">
+			<a href = "/register/">Регистрация</a>
+		</form>
+</body>
+</html>
